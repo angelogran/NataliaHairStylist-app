@@ -4,4 +4,4 @@ En ésta se puede agregar un turno especificando el nombre del cliente, la descr
 y hora más reciente. A estos turnos se los pueden eliminar y también se les puede dar por hechos.
 
 
-Programado con JS y compilado para Android con Cordova.
+Programado con JS y estilizado con Materialize.css y compilado para Android con Cordova.
