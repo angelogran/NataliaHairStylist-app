@@ -21,6 +21,8 @@ function nuevoTurno(e){
             let fecha =document.getElementById('fecha').value;
             let hora = document.getElementById('hora').value;
             let exists = false; 
+
+            //Acá busca si existe algun turno ya guardado con esa fecha y hora. Si existe pone la variable "exists" en true y no deja guardar el turno.
             if(localStorage.getItem("turnos")!= null){
                 let turnos = JSON.parse(localStorage.getItem("turnos"));
                 for(let i = 0; i < turnos.length; i++){
@@ -55,6 +57,7 @@ function nuevoTurno(e){
     e.preventDefault(); //Evitar refresco de página.
 }
 function guardarTurno(cliente,descripcion,fecha,hora){
+    //Si el ID no está guardado se le asigna un 0.
     if(localStorage.getItem("id") === null){
         let id = 0;
         localStorage.setItem("id", id);
@@ -113,6 +116,7 @@ function eliminarTurno(id){
 }
 
 function finalizarTurno(id){
+    //Busca el turno en el localstorage por el id y una vez encontrado lo elimina
     let turnos = JSON.parse(localStorage.getItem("turnos"));
     for(let i = 0; i < turnos.length; i++){
         if(turnos[i].id == id){
@@ -176,6 +180,7 @@ function obtenerTurnos(){
         }
     });
 
+    //Una vez ordenado el array de turnos los muestra en pantalla en formato de cards con el nombre del dia y del mes.
     for(let i = 0; i < turnos.length; i++){
         let cliente = turnos[i].cliente;
         let descripcion = turnos[i].descripcion;
