@@ -203,6 +203,7 @@ function obtenerTurnos(){
             <div class="card-action">
                 <a href="#" onclick="finalizarTurno('${id}')" ><i class="small material-icons">check</i></a>
                 <a href="#" onclick="eliminarTurno('${id}')"><i class="small material-icons">delete</i></a>
+                
             </div>
         </div>
         `
